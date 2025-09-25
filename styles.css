@@ -1,0 +1,568 @@
+/* ===================== GLOBAL ===================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('img/images/img1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  font-family: system-ui;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000ba;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== HEADER / NAVBAR ===================== */
+header {
+  background-color: #ff9800;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo-container a{
+  width: 30%;
+  margin-left: 2px;
+  height: inherit;
+}
+
+#img_logo{
+  width: 100%;
+}
+
+.logo-container a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.logo-container h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: none;
+}
+
+.hero-content {
+  border: 1px solid #111111;
+  background: #000000ba;
+  padding: 2rem 3rem;
+  text-align: center;
+  
+  color: #6c63ff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+#hero-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #6c63ff;
+  text-shadow: 0 0 4px rgba(108, 99, 255, 0.6),
+               0 0 12px rgba(108, 99, 255, 0.3);
+}
+
+#hero-subtext {
+  font-size: 1.3rem;
+  color: #6c63ff;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 3px rgba(108, 99, 255, 0.5);
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  will-change: transform, opacity, text-shadow;
+}
+
+.letter.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 4px rgba(108, 99, 255, 0.35),
+                 0 0 10px rgba(108, 99, 255, 0.18);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(108, 99, 255, 0.9),
+                 0 0 20px rgba(108, 99, 255, 0.45);
+  }
+}
+
+/* ===================== SECTIONS ===================== */
+.sect {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.sect_bg {
+  /*background: linear-gradient(135deg, #0D0D0D, #1A1A1A);*/
+  background: #6c63ff;
+
+  color: #ffffff;
+  padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: justify;
+  margin: 10px;
+}
+
+/* ===================== CARDS ===================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #1A1A1A;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: cursive;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* evita que la imagen salga del card */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.card img {
+  width: 80%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  display: block;
+  transform-origin: center center;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+/* ===================== TECNOLOGÍAS ===================== */
+.tecnologias {
+  width: 100%;
+  padding: 0;
+}
+
+.tech-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tech-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  align-items: start;
+}
+
+
+.card-container.small-cards .card {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* ===================== ICONOS PEQUEÑOS PARA FRAMEWORKS Y HERRAMIENTAS ===================== */
+.card-container.small-cards .img-container {
+  width: 100px;          /* ancho del icono */
+  height: 80px;         /* alto del icono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container.small-cards .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* mantiene proporción completa dentro de 50x50px */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card-container.small-cards .img-container img:hover {
+  transform: scale(1.1);
+}
+
+
+
+.img-container {
+  width: 100%;
+  height: 20vh; /* ocupa toda la altura visible de la pantalla */
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* asegura que la imagen cubra todo el contenedor */
+  object-position: center; /* centra la imagen */
+  transition: transform 0.3s ease;
+  display: block;
+  transform-origin: center center;
+}
+.img-container img:hover {
+  transform: scale(1.2);
+}
+
+/* ===================== TOGGLE & PROGRESS ===================== */
+.toggle-btn {
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #5146d6;
+}
+
+.descripcion {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.descripcion.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #ff5722;
+  text-align: right;
+  padding-right: 5px;
+  line-height: 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px 0 0 10px;
+  width: 0;
+  transition: width 1s ease;
+}
+
+/* ===================== FORMULARIO ===================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===================== BOTONES ===================== */
+button, .hero-content .btn {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover, .hero-content .btn:hover {
+  background-color: #5146d6;
+}
+
+/* ===================== INPUTS / TEXTAREA ===================== */
+input, textarea {
+  padding: 0.7rem;
+  color: #ccc;
+  background: #272727d8;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  outline: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+  background: #272727d8;
+  box-shadow: 0 0 5px #6c63ff;
+  outline: none;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: #1a1a1a;
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffffcc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.footer-redes a {
+  text-decoration: none;
+  color: #BBBBBB;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-redes a:hover {
+  color: #25D366;
+  transform: scale(1.2);
+}
+
+/* ===================== WHATSAPP FLOAT ===================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-columns {
+    flex-direction: column;
+  }
+
+  #lenguajes{
+    padding: 0%;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-container.small-cards .img-container {
+          /* ancho del icono */
+  height: 80px;        
+  width: 100%;
+}
+
+ 
+  .img-container {
+    aspect-ratio: auto;
+  }
+
+  .img-container img {
+    height: auto;
+  }
+
+  .logo-container {
+    justify-content: justify;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    background-color: #5146d6;
+    
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    opacity: 1;
+    align-items: baseline;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.3rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  .proyecto, .perfil, .testimonio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem 1.2rem;
+  }
+
+  #hero-text {
+    font-size: 1.5rem;
+  }
+
+  #hero-subtext {
+    font-size: 0.9rem;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  button, .hero-content .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-redes a {
+    font-size: 20px;
+  }
+}

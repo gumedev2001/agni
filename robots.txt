@@ -1,0 +1,6 @@
+# Permitir a todos los bots rastrear el sitio
+User-agent: *
+Allow: /
+
+# Sitemap para acelerar la indexación
+Sitemap: https://agni.gamer.gd/sitemap.xml
